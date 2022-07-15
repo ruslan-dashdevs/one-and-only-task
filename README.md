@@ -34,26 +34,26 @@
 - Implement method for **sum of diameters** for two given objects
 - Please return us your solution in 24 hours.
 
-### Install
+## Install
 Steps for the developer to setup the project initially:
 ```shell
 make install
 ```
 
-### Build
-Steps for the developer to build the project after some code changes:
+### Start
+Steps for the developer to start this project locally:
 ```shell
-make build
+docker-compose up
+```
+
+### Lint
+Steps for the developer to run code quality tools on the project after some code changes:
+```shell
+make lint
 ```
 
 ### Test
 Steps for the developer to run tests locally to make sure that everything is works properly:
 ```shell
 make test
-```
-
-### Deploy
-Steps for the developer to publish this project to a server:
-```shell
-make deploy
 ```

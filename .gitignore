@@ -126,3 +126,10 @@ $RECYCLE.BIN/
 .phpunit.result.cache
 ###< phpunit/phpunit ###
 
+###> docker ###
+/docker/postgres/data/*
+!/docker/postgres/data/.gitkeep
+/docker/postgres/nginx/*
+!/docker/postgres/nginx/.gitkeep
+/docker/logs/*
+###< docker ###
