@@ -3,7 +3,7 @@ install : ; \
     composer install
 
 .PHONY: lint
-lint : phpcs phpstan
+lint : phpcs phpstan psalm
 
 .PHONY: phpcs
 phpcs : ; \
@@ -16,3 +16,7 @@ phpcsf: ; \
 .PHONY: phpstan
 phpstan : ; \
 	vendor/bin/phpstan
+
+.PHONY: psalm
+psalm : ; \
+	vendor/bin/psalm
