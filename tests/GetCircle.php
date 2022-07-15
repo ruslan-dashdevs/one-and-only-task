@@ -7,15 +7,13 @@ namespace App\Tests;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class GetTriangle extends ApiTestCase
+class GetCircle extends ApiTestCase
 {
-    private const REQUEST_URI = '/triangle/';
+    private const REQUEST_URI = '/circle/';
 
     private const VALIDATION_RULES = [
         'type' => ['notEmpty', 'string'],
-        'a' => ['notEmpty', 'float'],
-        'b' => ['notEmpty', 'float'],
-        'c' => ['notEmpty', 'float'],
+        'radius' => ['notEmpty', 'float'],
         'surface' => ['notEmpty', 'float'],
         'circumference' => ['notEmpty', 'float'],
     ];
@@ -24,7 +22,7 @@ class GetTriangle extends ApiTestCase
     {
         $response = $this->request(
             Request::METHOD_GET,
-            self::REQUEST_URI . "3/4/5"
+            self::REQUEST_URI . "2"
         );
 
         $this->dumpResponseIfCodeNotExpected($response, Response::HTTP_OK);
@@ -36,9 +34,9 @@ class GetTriangle extends ApiTestCase
         self::assertNotEmpty($responseData);
         $this->validateRecordsBasedOnRules([$responseData], self::VALIDATION_RULES);
 
-        self::assertEquals(6, $responseData['surface']);
-        self::assertEquals(12, $responseData['circumference']);
-        self::assertEquals('triangle', $responseData['type']);
+        self::assertEquals(12.57, $responseData['surface']);
+        self::assertEquals(12.57, $responseData['circumference']);
+        self::assertEquals('circle', $responseData['type']);
     }
 
 }
