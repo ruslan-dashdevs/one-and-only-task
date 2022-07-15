@@ -20,3 +20,10 @@ phpstan : ; \
 .PHONY: psalm
 psalm : ; \
 	vendor/bin/psalm
+
+.PHONY: test
+test : phpunit
+
+.PHONY: phpunit
+phpunit : ; \
+	vendor/bin/phpunit
