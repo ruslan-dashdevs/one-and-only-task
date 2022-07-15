@@ -3,12 +3,16 @@ install : ; \
     composer install
 
 .PHONY: lint
-lint : phpcs
+lint : phpcs phpstan
 
 .PHONY: phpcs
 phpcs : ; \
     vendor/bin/phpcs
 
-.PHONE: phpcsf
+.PHONY: phpcsf
 phpcsf: ; \
 	vendor/bin/php-cs-fixer fix src
+
+.PHONY: phpstan
+phpstan : ; \
+	vendor/bin/phpstan
